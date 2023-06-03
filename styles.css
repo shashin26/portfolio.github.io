@@ -80,7 +80,7 @@ section{
     background: url('images/1New\ Project.jpg') no-repeat;
     background-size: cover;
     background-position: center;
-}    ]
+}
 .home-content{
     max-width: 60rem;
     z-index: 99;
@@ -226,6 +226,35 @@ section{
 }
 .home-sci a:hover::before{
     width: 100%;
+}
+.notification {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    width: max-content;
+    padding: 20px;
+    border-radius: 4px;
+    font-size: large;
+    background-color: var(--second-bg--color);
+    color: var(--text-color);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, .1);
+    transform: translateY(30px);
+    opacity: 0;
+    visibility: hidden;
+    animation: fade-in 4s linear forwards;
+    z-index: 100;;
+}
+.notification_progress {
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    width: calc(100%-10px);
+    height: 3px;
+    transform:scaleX(0);
+    transform-origin: left;
+    background-image: linear-gradient(to right, #539bdb, #3250bf);
+    border-radius: inherit;
+    animation: load 3s 0.25s linear forwards;
 }
 .about{
     display: flex;
@@ -799,5 +828,21 @@ footer .animate.scroll {
 @keyframes showRight {
     100% {
         width: 0;
+    }
+}
+@keyframes fade-in {
+    5% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    90% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes load {
+    to {
+        transform: scaleX(1);
     }
 }
